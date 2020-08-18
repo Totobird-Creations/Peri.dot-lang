@@ -1,0 +1,237 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:300,300italic");
+
+* {
+    scroll-behavior: smooth;
+}
+
+html, body {
+    font-family              : 'Lato', sans-serif;
+    margin                   : 0;
+    padding                  : 0;
+    background-color         : #eeeeee;
+}
+
+#wrapper {
+    max-width                : 95%;
+    margin                   : 0 auto;
+    display                  : grid;
+    grid-template-columns    : 300px 1fr;
+    box-shadow               : 0 1px 2px #777777;
+    background-color         : #ffffff;
+}
+
+
+
+h1 {
+    margin                   : 30px;
+}
+
+code {
+    font-family              : monospace;
+    background-color         : #000000;
+    color                    : #eeffff;
+    padding                  : 1px 4px;
+    border-radius            : 3px;
+    text-shadow              : 0 1px 2px #000000;
+    box-shadow               : 0 1px 2px #777777;
+}
+
+.block {
+    font-family              : monospace;
+    background-color         : #000000;
+    color                    : #eeffff;
+    padding                  : 1px 4px;
+    border-radius            : 3px;
+    text-shadow              : 0 1px 2px #000000;
+    box-shadow               : 0 1px 2px #777777;
+}
+.block {
+    padding                  : 10px;
+    white-space              : pre;
+}
+
+.lang-lit {color: #b5cea8;}
+.lang-inv {color: #ff0000;}
+.lang-inv:before {
+    content                  : '~~~~~~~~~~~~';
+    font-size                : 0.6em;
+    font-weight              : 700;
+    font-family              : 'Times New Roman', Times, serif;
+    color                    : #ff0000;
+    width                    : 100%;
+    position                 : absolute;
+    top                      : 12px;
+    left                     : -1px;
+    overflow                 : hidden;
+}
+.lang-exc {color: #ff0000;}
+.lang-esc {color: #9cdcfe;}
+.lang-str {color: #ce9178;}
+.lang-opr {color: #eeffff;}
+.lang-pun {color: #eeffff;}
+.lang-kwd {color: #c586c0;}
+.lang-bif {color: #dcdcaa;}
+.lang-bto {color: #569cd6;}
+.lang-idn {color: #eeffff;}
+.lang-com {color: #7ca668; font-style: italic;}
+.lang-typ {color: #4ec9b0;}
+
+.lang {
+    position                 : relative;
+    display                  : inline-block;
+}
+.lang .tooltip {
+    pointer-events           : none;
+    opacity                  : 0;
+    min-width                : 360px;
+    margin-left              : -100%;
+    margin-top               : 12pt;
+    border                   : 1px solid #dddddd;
+    background-color         : #222222;
+    color                    : #ffffff;
+    border-radius            : 6px;
+    padding                  : 5px 5px;
+    position                 : absolute;
+    z-index                  : 1;
+    transition               : opacity 0.2s;
+    transition-delay         : 0s;
+}
+.lang:hover .tooltip {
+    pointer-events           : all;
+    opacity                  : 0.85;
+    transition-delay         : 0.25s;
+}
+
+
+#navbar {
+    position                 : fixed;
+    width                    : 300px;
+    background-color         : #dddddd;
+}
+
+#navbar header {
+    border-bottom            : 2px solid #777777;
+}
+#navbar img {
+    width                    : 250px;
+    height                   : auto;
+    margin-top               : 50px;
+    margin-bottom            : 50px;
+    margin-left              : 25px;
+    margin-right             : 25px;
+}
+
+#navbar ol {
+    list-style               : none;
+    margin                   : 0;
+    padding                  : 0;
+    background-color         : #ffffff;
+    font-family              : Verdana;
+}
+
+#navbar ol li {
+    display                  : block;
+}
+#navbar ol {
+    border-bottom            : 2px solid #777777;
+}
+
+#navbar ol li a {
+    position                 : relative;
+    display                  : block;
+    padding                  : 10px;
+    text-decoration          : none;
+    font-size                : 14px;
+    transition               : all .15s ease-in-out;
+    text-align               : left;
+    text-shadow              : 0 1px 2px #ffffff;
+    border-bottom            : 1px solid #dddddd;
+    color                    : #4444ff;
+}
+#navbar ol li a:visited {
+    color                    : #4444ff;
+}
+#navbar ol li a:hover {
+    box-shadow               : 0 2px 2px #777777;
+    transform                : translateY(-2px);
+    background-color         : #eeeeee;
+}
+#navbar ol li a.error {
+    color                    : #ff0000;
+}
+#navbar ol li a i {
+    float                    : right;
+    font-style               : normal;
+    width                    : 1em;
+    text-align               : center;
+}
+
+
+
+#main-header {
+    background-color         : #dddddd;
+}
+
+main {
+    padding                  : 20px;
+    border-left              : 1px dotted #999999;
+    grid-column              : 2 / -1;
+}
+
+hr {
+    margin                   : 20px auto;
+}
+
+.example {
+    padding                  : 20px;
+    border                   : 1px solid #777777;
+    border-radius            : 3px;
+}
+
+#span-example span {
+    border                   : 1px solid #000000;
+    background-color         : #00ff00;
+}
+
+
+
+#footer {
+    grid-column              : span 2;
+    padding                  : 20px;
+    background               : #444444;
+}
+
+#footer a {
+    display                  : block;
+    text-align               : center;
+    color                    : #ffffff;
+    text-shadow              : 0 1px 2px #000000;
+}
+
+
+
+@media (max-width: 860px) {
+    #wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    #navbar {
+        position             : relative;
+        width                : 100%;
+    }
+
+    #navbar img {
+        display              : block;
+        width                : 100px;
+        margin               : 0 auto;
+        padding              : 20px;
+    }
+
+    #main-header {
+        grid-column          : 1 / -1;
+    }
+
+    main {
+        grid-column          : 1 / -1;
+    }
+}
