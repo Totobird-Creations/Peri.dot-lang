@@ -1,6 +1,8 @@
 <html>
     <head>
-        <link href='./main.css' rel='stylesheet' type='text/css'></style>
+        <title>Peri.dot Language Docs</title>
+        <link href='./main.css' rel='stylesheet' type='text/css'></link>
+        <link rel='icon' href='favicon.png' type='image/png' ></link>
         <script src="https://kit.fontawesome.com/8e3c095ab3.js" crossorigin="anonymous"></script>
     </head>
     <body>
@@ -8,7 +10,7 @@
             <div id='nav-wrapper'>
                 <nav id='navbar'>
                     <header>
-                        <img src='./logo.png'></img>
+                        <img src='./favicon.png'></img>
                     </header>
                     <ol>
                         <li><a href='#whatisperidot'>What is Peri.dot?<i class="fas fa-question"></i></a></li>
@@ -23,7 +25,7 @@
                         <li><a href='#typeconversion'>Type Conversion<i class="fas fa-cubes"></i></a></li>
                     </ol>
                     <ol>
-                        <li><a href='#flowcontrol' class='error'>Flow Control<i class="fas fa-align-left"></i></a></li>
+                        <li title='Not Yet Supported'><a href='#flowcontrol' class='error'>Flow Control<i class="fas fa-align-left"></i></a></li>
                         <li><a href='#exceptions'>Exception Handling<i class="fas fa-exclamation"></i></a></li>
                     </ol>
                 </nav>
@@ -34,7 +36,6 @@
             </h1></header>
 
             <main id='main-doc'>
-
 
                 <section id='whatisperidot' class='main-section'>
                     <header><h2>
@@ -54,13 +55,13 @@
                     </h2></header>
 
                     <article><p>
-                        Peri.dot uses the python <a href='https://click.palletsprojects.com/'>click</a> and <a href='https://pypi.org/project/colorama/'>colorama</a> packages
-                        <br /><br />
+                        Peri.dot uses poetry for dependency management. Download and install it from <a href='https://python-poetry.org/'>here</a>.
                         <header><h3>
                             Setup
                         </h3></header>
                         <p class='block bash'>git clone https://github.com/toto-bird/Peri.dot.git
-cd Peri.dot</p>
+cd Peri.dot
+poetry install</p>
                         <header><h3>
                             Usage
                         </h3></header>
