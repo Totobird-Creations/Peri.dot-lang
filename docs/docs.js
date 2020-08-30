@@ -12,6 +12,6 @@ for (i=0;i< elements.length ;i++) {
 
 var element = document.getElementById('nav-links');
 element.innerHTML = `<ul>
-    <li><a class="nav-link" href="/docs">Introduction</a></li>
-    <li><a class="nav-link" href="/docs/beginners">Beginners</a></li>
+    <li><a class="nav-link" href="https://toto-bird.github.io/Peri.dot-lang/docs">Introduction</a></li>
+    <li><a class="nav-link" href="https://toto-bird.github.io/Peri.dot-lang/docs/beginners">Beginners</a></li>
 </ul>`
