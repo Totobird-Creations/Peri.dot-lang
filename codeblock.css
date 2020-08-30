@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:300,300italic");
+
+code {
+    font-family              : monospace;
+    background-color         : #000000;
+    color                    : #eeffff;
+    padding                  : 1px 4px;
+    border-radius            : 3px;
+    text-shadow              : 0 1px 2px #000000;
+    box-shadow               : 0 1px 2px #777777;
+}
+
+.block {
+    font-family              : monospace;
+    background-color         : #000000;
+    color                    : #eeffff;
+    padding                  : 1px 4px;
+    border-radius            : 3px;
+    text-shadow              : 0 1px 2px #000000;
+    box-shadow               : 0 1px 2px #777777;
+}
+.block {
+    padding                  : 10px;
+    white-space              : pre;
+}
+
+.lang-lit {color: #b5cea8;}
+.lang-inv {color: #ff0000;}
+.lang-inv:before {
+    content                  : '~~~~~~~~~~~~';
+    font-size                : 0.6em;
+    font-weight              : 700;
+    font-family              : 'Times New Roman', Times, serif;
+    color                    : #ff0000;
+    width                    : 100%;
+    position                 : absolute;
+    top                      : 12px;
+    left                     : -1px;
+    overflow                 : hidden;
+}
+.lang-exc {color: #ff0000;}
+.lang-esc {color: #9cdcfe;}
+.lang-str {color: #ce9178;}
+.lang-opr {color: #eeffff;}
+.lang-pun {color: #eeffff;}
+.lang-kwd {color: #c586c0;}
+.lang-bif {color: #dcdcaa;}
+.lang-bto {color: #569cd6;}
+.lang-idn {color: #eeffff;}
+.lang-com {color: #7ca668; font-style: italic;}
+.lang-typ {color: #4ec9b0;}
+
+.lang {
+    position                 : relative;
+    display                  : inline-block;
+}
+.lang .tooltip {
+    pointer-events           : none;
+    opacity                  : 0;
+    min-width                : 360px;
+    margin-left              : -100%;
+    margin-top               : 12pt;
+    border                   : 1px solid #dddddd;
+    background-color         : #222222;
+    color                    : #ffffff;
+    border-radius            : 6px;
+    padding                  : 5px 5px;
+    position                 : absolute;
+    z-index                  : 1;
+    transition               : opacity 0.2s;
+    transition-delay         : 0s;
+}
+.lang:hover .tooltip {
+    pointer-events           : all;
+    opacity                  : 0.85;
+    transition-delay         : 0.25s;
+}
