@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <title>Peri.dot Language Docs</title>
+        <link href='../codeblock.css' rel='stylesheet' type='text/css'></link>
+        <link href='../docs/docs.css' rel='stylesheet' type='text/css'></link>
+        <link rel='icon' href='../favicon.png' type='image/png' ></link>
+    </head>
+    <body>
+
+        <nav id="navbar">
+            <div id="collapse">
+                <header><a href="https://toto-bird.github.io/Peri.dot-lang/"><img src='https://toto-bird.github.io/Peri.dot-lang/favicon.png'></img></a></header>
+            <div id="menu-icon" onclick="menuIcon(this)">
+                <div id="bar1"></div>
+                <div id="bar2"></div>
+                <div id="bar3"></div>
+            </div>
+            </div>
+            <div id="nav-links" class="hide"></div>
+        </nav>
+
+        <main id="main-doc">
+            <section id="header" class="main-section">
+                <header>Peri.dot Documentation (<span class='version'></span>)</header>
+            </section>
+
+            <section class="main-section">
+                <header>Basic Function</header>
+                <p><span style="padding-left: 25px;"></span>
+                    Functions are groups of code that can be called multiple times. Functions MUST return a value using the <code class='peridot'>return</code> keyword. The return type must also be specified.
+                </p>
+                <p class='block peridot'>var helloword = func() -> Null {
+    print('Hello World!')
+    return(Null)
+}
+
+helloword() # This calls the function</p>
+            </section>
+
+            <section class="main-section">
+                <header>Function Arguments</header>
+                <p><span style="padding-left: 25px;"></span>
+                    The type of arguments in Peri.dot functions must be specified. If the argument type is <code class='peridot'>Null</code>, the argument can take in any type.
+                </p>
+                <p class='block peridot'>var greet = func(name: str) -> Null {
+    print('Hello, ' + name + '!')
+    return(Null)
+}
+
+greet('Peri.dot')</p>
+            </section>
+
+            <section class="main-section">
+                <header>Function Default Arguments</header>
+                <p><span style="padding-left: 25px;"></span>
+                    Default arguments are arguments that have a default. The argument type comes from the default value. Default arguments that are <code class='peridot'>Null</code> can take in any value.
+                </p>
+                <p class='block peridot'>var greet = func(name: str, emph=1) -> Null {
+    print('Hello, ' + name + '!'.repeat(emph))
+    return(Null)
+}
+
+greet('Peri.dot') # emph will default to 1.
+greet('Peri.dot', emph=10) # emph will be set to 10.</p>
+            </section>
+
+            <section class="main-section">
+                <header>Returning</header>
+                <p><span style="padding-left: 25px;"></span>
+                    The <code class='peridot'>return</code> statement must be used in every function to return a value. The return value type is the number after the <code class='peridot'>-></code>.
+                </p>
+                <p class='block peridot'>var add = func(a: int, b: int) -> int {
+    return(a + b)
+}
+
+print(
+    add(18, 32)
+) # Should print 50.</p>
+            </section>
+        </main>
+
+        <script src='../docs/docs.js'></script>
+        <script src='../colours-peri.js'></script>
+        <script src='../colours-bash.js'></script>
+        <script src="https://kit.fontawesome.com/8e3c095ab3.js" crossorigin="anonymous"></script>
+    </body>
+</html>

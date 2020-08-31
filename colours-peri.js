@@ -57,7 +57,9 @@ var KEYWORDS = {
     'continue': ['Continues to the next iteration of the loop.',
                 '<span class=\'lang-kwd\'>continue</span>()'],
     'break'   : ['Breaks out of the loop.',
-                '<span class=\'lang-kwd\'>break</span>()']
+                '<span class=\'lang-kwd\'>break</span>()'],
+    'handler' : ['Handles any exceptions raised from inside of the handler except for the <span class=\'lang-typ\'>PanicException</span>. Returns either an exception object or <span class=\'lang-bto\'>Null</span>.',
+                '<span class=\'lang-kwd\'>handler</span> {}']
 }
 
 var BUILTINFUNC = {
