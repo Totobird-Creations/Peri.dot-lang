@@ -1,0 +1,203 @@
+<html>
+    <head>
+        <title>Peri.dot Language Docs</title>
+        <link href='../codeblock.css' rel='stylesheet' type='text/css'></link>
+        <link href='../docs/docs.css' rel='stylesheet' type='text/css'></link>
+        <link rel='icon' href='../favicon.png' type='image/png' ></link>
+        <style>
+            ul.deplist {
+                margin         : 0;
+            }
+
+            ul.deplist li {
+                margin         : 0;
+                margin-left    : 1em;
+            }
+
+            ul.deplist li a {
+                color          : #000000;
+                text-decoration: none;
+                font-style     : italic;
+            }
+
+            section a {
+                color          : #000000;
+            }
+        </style>
+    </head>
+    <body>
+
+        <nav id="navbar">
+            <div id="collapse">
+                <header><a href="https://toto-bird.github.io/Peri.dot-lang/"><img src='https://toto-bird.github.io/Peri.dot-lang/favicon.png'></img></a></header>
+            <div id="menu-icon" onclick="menuIcon(this)">
+                <div id="bar1"></div>
+                <div id="bar2"></div>
+                <div id="bar3"></div>
+            </div>
+            </div>
+            <div id="nav-links" class="hide"></div>
+        </nav>
+
+        <main id="main-doc">
+            <section id="header" class="main-section">
+                <header>Peri.dot Documentation (<span class='version'></span>)</header>
+            </section>
+
+            <section class="main-section">
+                <header>List of Types</header>
+                <p>
+                    <ul class='deplist'>
+                        <li><a href='#nulltypes'>NullTypes</a> <code class='peridot'>Null</code></li>
+                        <li><a href='#integers'>Integers</a> <code class='peridot'>int</code></li>
+                        <li><a href='#floats'>Floating</a> Point Numbers <code class='peridot'>float</code></li>
+                        <li><a href='#strings'>Strings</a> <code class='peridot'>str</code></li>
+                        <li><a href='#booleans'>Booleans</a> <code class='peridot'>bool</code> <code class='peridot'>True</code> <code class='peridot'>False</code></li>
+                        <li><a href='#arrays'>Arrays</a> <code class='peridot'>array</code></li>
+                        <li><a href='#dictionaries'>Dictionaries</a></li>
+                        <li><a href='#tuples'>Tuple</a> <code class='peridot'>tuple</code></li>
+                        <li><a href='https://toto-bird.github.io/Peri.dot-lang/docs/functions'>Functions</a> <code class='peridot'>func</code></li>
+                        <li><a href='https://toto-bird.github.io/Peri.dot-lang/docs/builtinfunctions'>Built-In Functions</a></li>
+                        <li><a href='#exceptions'>Exceptions</a></li>
+                        <li><a href='#ids'>Id</a> <code class='peridot'>id</code></li>
+                        <li><a href='https://toto-bird.github.io/Peri.dot-lang/docs/includes'>Namespaces</a> <code class='peridot'>include</code></li>
+                    </ul><br />
+                </p>
+
+                <subheader id='nulltypes'>NullTypes</subheader>
+                <p class='block peridot'>var test = Null
+# NullTypes are values that are generally used as a placeholder.
+# When using a NullType as a function argument type, return
+# type, or variable value, any other type can be placed in without
+# throwing an error.
+
+test = 10 # This will work because test is Null.
+test = 'hello' # This will not work because test is a string.</p>
+
+                <subheader id='integers'>Integers</subheader>
+                <p class='block peridot'>var test = 10
+
+int(10.0)                           # 10
+int(10.1)                           # ValueException: 10.1 (Float) can not be converted to Int
+
+int('10')                           # 10
+int('hi')                           # ValueException: 'hi' (Str) can not be converted to Int
+
+int(True)                           # 1
+int(False)                          # 0
+
+int(id(#= Anything can go here =#)) # XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+test.as_ratio()                     # (10, 1)</p>
+
+                <subheader id='floats'>Floating Point Numbers</subheader>
+                <p class='block peridot'>var test = 0.25
+
+float(10)     # 10.0
+
+float('10')   # 10.0
+float('10.0') # 10.0
+float('hi')   # ValueException: 'hi' (Str) can not be converted to Float
+
+float(True)   # 1.0
+float(False)  # 0.0
+
+test.as_ratio() # (1, 4)</p>
+
+                <subheader id='strings'>Strings</subheader>
+                <p class='block peridot'>var test = 'Hello, Peri.dot!'
+
+str(Null)                     # 'Null'
+
+str(10)                       # '10'
+str(10.0)                     # '10.0'
+
+str(True)                     # 'True'
+str(False)                    # 'False'
+
+str([1, 2, 3])                # '[1, 2, 3]'
+str({1: 2, 3: 4})             # '{1: 2, 3: 4}'
+str((1, 2, 3))                # '(1, 2, 3)'
+
+var donothing = func() -> Null {
+    return(Null)
+}
+str(dosomething)              # '<<!---->Function donothing <<!---->XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX>>''
+str(print)                    # '<<!---->Built-In Function print>''
+
+var try = handler {
+    10 / 0
+}
+str(try)                      # '<<!---->OperationException:Division by zero, XX:XX>'
+
+var this = id(Null)
+str(this)                     # 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
+
+var sys = include('sys')
+str(sys)                      # '<<!---->Namespace: XX objects>'
+
+var test = 'Hello!'
+test.lalign(10, fillchar='=') # 'Hello!===='
+test.calign(10, fillchar='=') # '==Hello!=='
+test.ralign(10, fillchar='=') # '====Hello!'
+test.length                   # 6
+test.to_lower()               # 'hello!'
+test.repeat(3)                # 'Hello!Hello!Hello!'
+test.replace('!', '?')        # 'Hello?'
+test.slice(1, -1, 1)          # 'ello'
+test.split('e')               # ['H', 'llo!']</p>
+
+                <subheader id='booleans'>Booleans</subheader>
+                <p class='block peridot'>var test = True
+var test = False
+
+bool(Null) # False</p>
+
+                <subheader id='arrays'>Arrays</subheader>
+                <p class='block peridot'>var test = [1, 2, 3, 4]</p>
+
+                <subheader id='dictionaries'>Dictionaries</subheader>
+                <p class='block peridot'>var test = {1: 2, 3: 4}</p>
+
+                <subheader id='tuples'>Tuples</subheader>
+                <p class='block peridot'>var test = (1, 2, 3, 4)
+
+var try = handler {
+    10 / 0
+}
+tuple(try) # ('OperationException', 'Division by zero', XX, XX)</p>
+
+                <subheader><a href='https://toto-bird.github.io/Peri.dot-lang/docs/functions'>Functions</a></subheader><br />
+                <p></p>
+
+                <subheader><a href='https://toto-bird.github.io/Peri.dot-lang/docs/builtinfunctions'>Built-In Functions</a></subheader><br />
+                <p></p>
+
+                <subheader id='exceptions'>Exceptions</subheader>
+                <p><span style="padding-left: 25px;">Exceptions are currently only accessible from handling exceptions.</span></p>
+                <p class='block peridot'>var try = handler {
+    10 / 0
+}
+
+try.name   # 'OperationException'
+try.msg    # 'Division by zero'
+try.file   # 'XXXXX.XXX'
+try.loc    # '<<!---->file>'
+try.line   # XX
+try.column # XX
+try.text   # '10 / 0'</p>
+
+                <subheader id='ids'>Ids</subheader>
+                <p class='block peridot'>var test = id(#= Anything can go here =#)</p>
+
+                <subheader><a href='https://toto-bird.github.io/Peri.dot-lang/docs/includes'>Namespaces</a></subheader><br />
+                <p></p>
+            </section>
+        </main>
+
+        <script src='../docs/docs.js'></script>
+        <script src='../colours-peri.js'></script>
+        <script src='../colours-bash.js'></script>
+        <script src="https://kit.fontawesome.com/8e3c095ab3.js" crossorigin="anonymous"></script>
+    </body>
+</html>

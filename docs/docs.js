@@ -19,4 +19,5 @@ element.innerHTML = `<ul>
     <li><a class="nav-link" href="https://toto-bird.github.io/Peri.dot-lang/docs/functions">Functions</a></li>
     <li><a class="nav-link" href="https://toto-bird.github.io/Peri.dot-lang/docs/builtinfunctions">Built-In Functions</a></li>
     <li><a class="nav-link" href="https://toto-bird.github.io/Peri.dot-lang/docs/includes">Includes</a></li>
+    <li><a class="nav-link" href="https://toto-bird.github.io/Peri.dot-lang/docs/types">Types</a></li>
 </ul>`
