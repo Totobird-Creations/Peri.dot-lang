@@ -211,7 +211,7 @@ for (i=0;i< codeblocks.length ;i++) {
             val=advance(script,index);char=val[0];index=val[1];
         }
 
-        else if (',(){}[]'.includes(char)) {
+        else if (',(){}[]:.'.includes(char)) {
             tokens.push(['PUNCTUATION', char]);
             val=advance(script,index);char=val[0];index=val[1];
         }

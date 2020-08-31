@@ -7,6 +7,7 @@ html {
     height: 100%;
     margin: 0;
     padding: 0;
+    background: #2d2b2a;
 }
 body {
     width: 100%;
@@ -15,6 +16,8 @@ body {
     font-size: 100%;
     line-height: 1.45;
     color: #141414;
+    margin: 0;
+    padding: 0;
 }
 a {
     text-decoration: none;
@@ -61,7 +64,7 @@ img {
 }
 header {
     color: white;
-    background-image: url('../favicon.png');
+    background-color: #7fafff;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -309,9 +312,7 @@ footer ul li a:hover {
     text-align: left;
 }
 .bg-image {
-    background-image: url('../favicon.png');
-    background-repeat: no-repeat;
-    background-position: center;
+    background-color: #7affff;
     background-size: cover;
     text-align: center;
     position: relative;
