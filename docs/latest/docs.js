@@ -7,7 +7,7 @@ function menuIcon(x) {
 
 var elements = document.getElementsByClassName('version');
 for (i=0;i< elements.length ;i++) {
-    elements[i].innerHTML = '<a href="https://toto-bird.github.io/Peri.dot-lang/docs/versions>' + VERSION + '</a>'
+    elements[i].innerHTML = '<a href="https://toto-bird.github.io/Peri.dot-lang/docs/versions">' + VERSION + '</a>'
 }
 
 var element = document.getElementById('nav-links');
