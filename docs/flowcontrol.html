@@ -1,0 +1,153 @@
+<html>
+    <head>
+        <title>Peri.dot Language Docs</title>
+        <link href='../codeblock.css' rel='stylesheet' type='text/css'></link>
+        <link href='../docs/docs.css' rel='stylesheet' type='text/css'></link>
+        <link rel='icon' href='../favicon.png' type='image/png' ></link>
+    </head>
+    <body>
+
+        <nav id="navbar">
+            <div id="collapse">
+                <header><a href="https://toto-bird.github.io/Peri.dot-lang/"><img src='https://toto-bird.github.io/Peri.dot-lang/favicon.png'></img></a></header>
+            <div id="menu-icon" onclick="menuIcon(this)">
+                <div id="bar1"></div>
+                <div id="bar2"></div>
+                <div id="bar3"></div>
+            </div>
+            </div>
+            <div id="nav-links" class="hide"></div>
+        </nav>
+
+        <main id="main-doc">
+            <section id="header" class="main-section">
+                <header>Peri.dot Documentation (<span class='version'></span>)</header>
+            </section>
+
+            <section class="main-section">
+                <header>Booleans</header>
+                <p><span style="padding-left: 25px;"></span>
+                    Booleans are values that are either <code class='peridot'>True</code> or <code class='peridot'>False</code>. These are used in if, switch, and while statements.
+                </p>
+
+                <subheader>The <code class='peridot'>bool</code> type</subheader>
+                <p class='block peridot'>bool(1) # True
+bool('') # False</p>
+            </section>
+
+            <section class="main-section">
+                <header>If Statements</header>
+                <p><span style="padding-left: 25px;"></span>
+                    If statements are used when you want to execute separate code depending on certain conditions.
+                </p>
+                <p class='block peridot'>var x = 3
+
+if (x == 1) {
+    print('x is 1')
+} elif (x == 2) {
+    print('x is 2')
+} elif (x == 3) {
+    print('x is 3')
+} else {
+    print('x is not 1 or 2 or 3')
+}</p>
+            </section>
+
+            <section class="main-section">
+                <header>Switch Statements</header>
+                <p><span style="padding-left: 25px;"></span>
+                    Switch statements are another way of doing if statements.
+                </p>
+                <p class='block peridot'>var a = 3
+
+switch (var x as a) {
+    #   ^^^^^^^^^^
+    #   NOTE: If the var keyword is not there, x must already
+    #         be initialized as the same type as a.
+    when (x == 1) {
+        # ^^^^^^
+        # NOTE: You can not access any variable except for the specified
+        #       variable at the start of the switch statement.
+        print('x is 1')
+    }
+    when (x == 2) {
+        print('x is 2')
+    }
+    when (x == 3) {
+        print('x is 3')
+    }
+    else {
+        print('x is not 1 or 2 or 3')
+    }
+}</p>
+            </section>
+
+            <section class="main-section">
+                <header>For Looops</header>
+                <p><span style="padding-left: 25px;"></span>
+                    For loops iterate through a list.
+                </p>
+                <p class='block peridot'>var a = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
+
+for (var i in a) {
+    #^^^^^^^^^^
+    #NOTE: If the var keyword is not here, i must already be
+    #      initialized as the same type as all of the contents of a.
+    print(i)
+}</p>
+                <p><span style="padding-left: 25px;"></span>
+                    They can also repeat actions several times
+                </p>
+                <p class='block peridot'>var a = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
+
+for (var i in range(10)) {
+    print(str(i))
+}</p>
+            </section>
+
+            <section class="main-section">
+                <header>While Looops</header>
+                <p><span style="padding-left: 25px;"></span>
+                    While loops execute code repeatedly until the given condition is no longer <code class='peridot'>True</code>.
+                </p>
+                <p class='block peridot'>var x = 100
+
+while (x >= 1) {
+    x = x - 1
+}</p>
+            </section>
+
+            <section class="main-section">
+                <header>Break and Continue</header>
+                <p><span style="padding-left: 25px;"></span>
+                    <code class='peridot'>break()</code> and <code class='peridot'>continue()</code> are used in loops to "move around".
+                </p>
+                <p><span style="padding-left: 25px;"></span>
+                    <code class='peridot'>break()</code> will break out of the loop.
+                </p>
+                <p class='block peridot'>for (var i in range(10)) {
+    if (i >= 5) {
+        break() # The loop will break at iteration 5.
+    }
+    print(str(i)) # 0~4 will be printed. 5+ will not.
+}</p>
+                <p><span style="padding-left: 25px;"></span>
+                    <code class='peridot'>continue()</code> will continue to the next iteration of the loop.
+                </p>
+                <p class='block peridot'>var i = 0
+
+while (True) {
+    if (i == 5) {
+        continue() # The loop will skip the rest of iteration 5.
+    }
+    print(str(i)) # Will keep printing all numbers except 5
+}</p>
+            </section>
+        </main>
+
+        <script src='../docs/docs.js'></script>
+        <script src='../colours-peri.js'></script>
+        <script src='../colours-bash.js'></script>
+        <script src="https://kit.fontawesome.com/8e3c095ab3.js" crossorigin="anonymous"></script>
+    </body>
+</html>

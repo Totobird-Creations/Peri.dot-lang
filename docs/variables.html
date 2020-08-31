@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <title>Peri.dot Language Docs</title>
+        <link href='../codeblock.css' rel='stylesheet' type='text/css'></link>
+        <link href='../docs/docs.css' rel='stylesheet' type='text/css'></link>
+        <link rel='icon' href='../favicon.png' type='image/png' ></link>
+    </head>
+    <body>
+
+        <nav id="navbar">
+            <div id="collapse">
+                <header><a href="https://toto-bird.github.io/Peri.dot-lang/"><img src='https://toto-bird.github.io/Peri.dot-lang/favicon.png'></img></a></header>
+            <div id="menu-icon" onclick="menuIcon(this)">
+                <div id="bar1"></div>
+                <div id="bar2"></div>
+                <div id="bar3"></div>
+            </div>
+            </div>
+            <div id="nav-links" class="hide"></div>
+        </nav>
+
+        <main id="main-doc">
+            <section id="header" class="main-section">
+                <header>Peri.dot Documentation (<span class='version'></span>)</header>
+            </section>
+
+            <section class="main-section">
+                <header><span class='deprecated'></span>Pre-Initializing Variables</header>
+                <p><span style="padding-left: 25px;"></span>
+                    Variables containing <code class='peridot'>Null</code> can be set to anything else. Pre-initializing will set the variable to <code class='peridot'>Null</code> without you typing it all out.
+                </p>
+                <p class='block peridot'>var test
+print(str(test)) # This will print Null</p>
+            </section>
+
+            <section class="main-section">
+                <header>Initializing Variables</header>
+                <p><span style="padding-left: 25px;"></span>
+                    To initialize a variable, use the <code class='peridot'>var</code> keyword.
+                </p>
+                <p class='block peridot'>var test = 'hello'
+print(str(test))</p>
+            </section>
+
+            <section class="main-section">
+                <header>Assigning Variables</header>
+                <p><span style="padding-left: 25px;"></span>
+                    Assigning a variable is similar to initializing it. However, the variable type can not be changed.
+                </p>
+                <p class='block peridot'>var test = 'hello'
+test = 'Hello World!' # This will assign 'Hello World!' to test.
+test = 10 # This will throw a TypeError.
+
+var test = 10 # You can reinitialize the variable to change its type.
+
+var test = Null # Null variables can be set to anything else.
+test = [1, 2, 3, 4] # This works</p>
+            </section>
+        </main>
+
+        <script src='../docs/docs.js'></script>
+        <script src='../colours-peri.js'></script>
+        <script src='../colours-bash.js'></script>
+        <script src="https://kit.fontawesome.com/8e3c095ab3.js" crossorigin="anonymous"></script>
+    </body>
+</html>

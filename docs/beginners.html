@@ -4,28 +4,12 @@
         <link href='../codeblock.css' rel='stylesheet' type='text/css'></link>
         <link href='../docs/docs.css' rel='stylesheet' type='text/css'></link>
         <link rel='icon' href='../favicon.png' type='image/png' ></link>
-        <style>
-            ul.deplist {
-                margin         : 0;
-            }
-
-            ul.deplist li {
-                margin         : 0;
-                margin-left    : 1em;
-            }
-
-            ul.deplist li a {
-                color          : #000000;
-                text-decoration: none;
-                font-style     : italic;
-            }
-        </style>
     </head>
     <body>
 
         <nav id="navbar">
             <div id="collapse">
-                <header><a href="/"><img src='../favicon.png'></img></a></header>
+                <header><a href="https://toto-bird.github.io/Peri.dot-lang/"><img src='https://toto-bird.github.io/Peri.dot-lang/favicon.png'></img></a></header>
             <div id="menu-icon" onclick="menuIcon(this)">
                 <div id="bar1"></div>
                 <div id="bar2"></div>
@@ -41,7 +25,67 @@
             </section>
 
             <section class="main-section">
-                <header>Beginners</header>
+                <header>Hello World</header>
+                <p><span style="padding-left: 25px;"></span>
+                    Just like every other documentation for a programming language, let's start with a hello word program.
+                </p>
+
+                <subheader>The <code class='peridot'>print</code> built-in function</subheader>
+                <p>
+                    <span style="padding-left: 25px;"></span>The <code class='peridot'>print</code> built-in function takes a strings and prints it out to the console.
+                </p>
+                <p class='block peridot'>print('Hello ' + 'World!')</p>
+                <p>
+                    <span style="padding-left: 25px;"></span>Strings are surrounded by quotes or double quotes.
+                </p>
+            </section>
+
+            <section class="main-section">
+                <header>Integers and Floating Point Numbers</header>
+                <p><span style="padding-left: 25px;"></span>
+                    You need numbers in a programming language. There's no more explanation than that.
+                </p>
+
+                <subheader>The <code class='peridot'>str</code> type</subheader>
+                <p>
+                    <span style="padding-left: 25px;"></span>The <code class='peridot'>str</code> type takes in an object and converts it into a string. This is especially useful when you want to print non string objects.
+                </p>
+                <p class='block peridot'>print(str(
+    10 + 10 * 2 - 8 / 4
+))</p>
+                <p>
+                    <span style="padding-left: 25px;"></span>Note that due to this programming language being strongly typed, most situations will not allow you to use a different type than expected.<br />
+                    <span style="padding-left: 25px;"></span>For example:
+                    <p class='block peridot'>print(str(
+    10 + 10.0
+))</p>
+                    <span style="padding-left: 25px;"></span>The above script will throw a type error saying that you can not add a float to an int. Also,
+                    <p class='block peridot'>print(str(
+    10 / 3
+))</p>
+                    <span style="padding-left: 25px;"></span>The above script will print 3 instead of 3.<span style='text-decoration: overline;'>333</span>
+                </p>
+            </section>
+
+            <section class="main-section">
+                <header>Arrays and Tuples</header>
+                <p><span style="padding-left: 25px;"></span>
+                    Arrays arean object that can contain many objects. In Peri.dot, all of the contents must be the same type.
+                </p>
+                <p class='block peridot'>print(str(
+    [1, 2, 3, 4]
+))</p>
+                <p><span style="padding-left: 25px;"></span>
+                    Tuples are similar to arrays. However they can hold any type.
+                </p>
+                <p class='block peridot'>print(str(
+    (1, 2, 3, 4)
+))</p>
+
+                <subheader>The <code class='peridot'>array</code> and <code class='peridot'>tuple</code> types</subheader>
+                <p>
+                    <span style="padding-left: 25px;"></span>The <code class='peridot'>array</code> and <code class='peridot'>tuple</code> types take in an object and will converts it into an array of tuple respectively.
+                </p>
             </section>
         </main>
 

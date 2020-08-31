@@ -22,43 +22,81 @@ var ESCAPECHARS = {
 }
 
 var KEYWORDS = {
-    'var'    : ['Initializes a variable.',
-                    '<span class=\'lang-kwd\'>var</span> x'],
-    'func'   : ['Creates a <span class=\'lang-typ\'>function</span>.',
-                    '<span class=\'lang-kwd\'>func</span>() {}'],
-    'return' : ['Returns a value from a <span class=\'lang-typ\'>function</span>.',
-                    '<span class=\'lang-kwd\'>return</span>(<span class=\'lang-bto\'>Null</span>)'],
-    'handler': ['Handles any <span class=\'lang-typ\'>exception</span>s caused from inside the handler.',
-                    '<span class=\'lang-kwd\'>handler</span> {}'],
-    'and'    : ['Combines two <span class=\'lang-typ\'>bool</span>s with the <span class=\'lang-kwd\'>and</span> logical operator.',
-                    '<span class=\'lang-bto\'>True</span> <span class=\'lang-kwd\'>and</span> <span class=\'lang-bto\'>True</span>'],
-    'or'     : ['Combines two <span class=\'lang-typ\'>bool</span>s with the <span class=\'lang-kwd\'>or</span> logical operator.',
-                    '<span class=\'lang-bto\'>True</span> <span class=\'lang-kwd\'>or</span> <span class=\'lang-bto\'>False</span>'],
-    'not'    : ['Inverts a <span class=\'lang-typ\'>bool</span>.',
-                    '<span class=\'lang-kwd\'>not</span> <span class=\'lang-bto\'>False</span>']
+    'var'     : ['Initializes a variable.',
+                '<span class=\'lang-kwd\'>var</span> x'],
+    'func'    : ['Returns a <span class=\'lang-typ\'>function</span>.',
+                '<span class=\'lang-kwd\'>func</span>() -> Null {}'],
+    'lambda'  : ['Returns a <span class=\'lang-typ\'>function</span>. Lambdas are single line functions that do not require you to use return.',
+                '<span class=\'lang-kwd\'>func</span>() -> Null {}'],
+    'and'     : ['Combines two <span class=\'lang-typ\'>bool</span>s with the <span class=\'lang-kwd\'>and</span> logical operator.',
+                '<span class=\'lang-bto\'>True</span> <span class=\'lang-kwd\'>and</span> <span class=\'lang-bto\'>True</span>'],
+    'or'      : ['Combines two <span class=\'lang-typ\'>bool</span>s with the <span class=\'lang-kwd\'>or</span> logical operator.',
+                '<span class=\'lang-bto\'>True</span> <span class=\'lang-kwd\'>or</span> <span class=\'lang-bto\'>False</span>'],
+    'not'     : ['Inverts a <span class=\'lang-typ\'>bool</span>.',
+                '<span class=\'lang-kwd\'>not</span> <span class=\'lang-bto\'>False</span>'],
+    'return'  : ['Returns a value from a <span class=\'lang-typ\'>function</span>.',
+                '<span class=\'lang-kwd\'>return</span>(<span class=\'lang-bto\'>Null</span>)'],
+    'if'      : ['Open an if statement.',
+                '<span class=\'lang-kwd\'>if</span> (<span class=\'lang-bto\'>True</span>) {}'],
+    'elif'    : ['Open an elif segment of an if statement.',
+                '<span class=\'lang-kwd\'>if</span> (<span class=\'lang-bto\'>True</span>) {\n} <span class=\'lang-kwd\'>elif</span> (<span class=\'lang-bto\'>True</span>) {}'],
+    'else'    : ['Open an else segment of an if statement.',
+                '<span class=\'lang-kwd\'>if</span> (<span class=\'lang-bto\'>True</span>) {\n} <span class=\'lang-kwd\'>else</span> {}'],
+    'switch'  : ['Open a switch statement.',
+                '<span class=\'lang-kwd\'>switch</span> (<span class=\'lang-kwd\'>var</span> x <span class=\'lang-kwd\'>as</span> 10) {\n    <span class=\'lang-kwd\'>when</span> (x == 1) {}\n}'],
+    'when'    : ['Open a when segment of a switch statement.',
+                '<span class=\'lang-kwd\'>switch</span> (<span class=\'lang-kwd\'>var</span> x <span class=\'lang-kwd\'>as</span> 10) {\n    <span class=\'lang-kwd\'>when</span> (x == 1) {}\n}'],
+    'as'      : ['Miscellanious keyword',
+                '<span class=\'lang-kwd\'>switch</span> (<span class=\'lang-kwd\'>var</span> x <span class=\'lang-kwd\'>as</span> 10) {}'],
+    'for'     : ['Open a for loop.',
+                '<span class=\'lang-kwd\'>for</span> (<span class=\'lang-kwd\'>var</span> i <span class=\'lang-kwd\'>in</span> 10) {}'],
+    'in'      : ['Miscellanious keyword',
+                '<span class=\'lang-kwd\'>for</span> (i <span class=\'lang-kwd\'>in</span> range(10)) {}'],
+    'while'   : ['Open a while loop.',
+                '<span class=\'lang-kwd\'>while</span> (<span class=\'lang-bto\'>True</span>) {}'],
+    'continue': ['Continues to the next iteration of the loop.',
+                '<span class=\'lang-kwd\'>continue</span>()'],
+    'break'   : ['Breaks out of the loop.',
+                '<span class=\'lang-kwd\'>break</span>()']
 }
 
 var BUILTINFUNC = {
-    'assert': [{'condition': 'bool', 'message': 'str'},
-               'Checks if the condition is <span class=\'lang-bto\'>True</span>. If it is not, raises an <span class=\'lang-typ\'>AssertionError</span>.'],
+    'throw': [{'exception': 'exception'},
+                'Throws the given <span class=\'lang-typ\'>exception</span>.'],
+    'assert': [{'condition': 'bool', 'message=': '<span class=\'lang-str\'>\'\'</span>'},
+                'Checks if the condition is <span class=\'lang-bto\'>True</span>. If it is not, throws an <span class=\'lang-typ\'>AssertionException</span>.'],
     'panic' : [{'message': 'str'},
-               'Crashes the interpreter with a message.'],
-    'print' : [{'text': 'str'},
-               'Prints a message to the console.'],
-    'id'    : [{'obj': 'any'},
-               'Gets the id of an object.'],
+                'Raises a <span class=\'lang-typ\'>PanicException</span>. PanicExceptions can not be handled by handlers.'],
+    'print' : [{'message': 'str', 'prefix=': '<span class=\'lang-str\'>\'\'</span>', 'suffix=': '<span class=\'lang-str\'>\'\\n\'</span>'},
+                'Prints the given message to the console.'],
+    'range' : [{'stop': 'int', 'start=': '<span class=\'lang-lit\'>0</span>', 'step=': '<span class=\'lang-lit\'>1</span>'},
+                'Returns an <span class=\'lang-typ\'>array</span> containing a range of integers.'],
+}
+
+var TYPES = {
+    'type'  : [{'obj': 'any'},
+                'Returns the corresponding <span class=\'lang-typ\'>Built-In Function</span> of the given object.'],
     'str'   : [{'obj': 'any'},
-               'Converts an object into a <span class=\'lang-typ\'>str</span>.'],
+                'Returns the given object as a string.'],
     'int'   : [{'obj': 'any'},
-               'Converts an object into an <span class=\'lang-typ\'>integer</span>.'],
+                'Returns the given object as an integer.'],
     'float' : [{'obj': 'any'},
-               'Converts an object into a <span class=\'lang-typ\'>float</span>.']
+                'Returns the given object as a floating point number.'],
+    'bool'  : [{'obj': 'any'},
+                'Returns the given object as a boolean.'],
+    'array' : [{'obj': 'any'},
+                'Returns the given object as an array.'],
+    'tuple' : [{'obj': 'any'},
+                'Retuns the given object as a tuple.'],
+    'id'    : [{'obj': 'any'},
+                'Retuns an <span class=\'lang-typ\'>id</span> corresponding the given object.']
 }
 
 var BUILTINTYPEOBJ = {
     'True': 'Boolean',
     'False': 'Boolean',
-    'Null': 'NullType'
+    'Null': 'NullType',
+    '__peridot__': 'Array'
 }
 
 var script; // String
@@ -191,12 +229,37 @@ for (i=0;i< codeblocks.length ;i++) {
                 keys = Object.keys(BUILTINFUNC[identifier][0])
                 values = Object.values(BUILTINFUNC[identifier][0])
                 for (j=0;j< keys.length ;j++) {
-                    args.push('<strong>' + keys[j] + '</strong>: <span class=\'lang-typ\'>' + values[j] + '</span>');
+                    if (keys[j].endsWith('=')) {
+                        combiner = ' = ';
+                        keys[j] = keys[j].slice(0, -1);
+                        value = values[j]
+                    } else {
+                        combiner = ': ';
+                        value = '<span class=\'lang-typ\'>' + values[j] + '</span>'
+                    }
+                    args.push('<strong>' + keys[j] + '</strong>' + combiner + value);
                 }
                 args = args.join(', ')
                 tokens.push(['BUILTINFUNC', identifier, '<span class=\'lang-typ\'>Built-In Function</span> <strong class=\'lang-bif\'>' + identifier + '</strong>(<br />&nbsp;&nbsp;' + args + '<br />)<br /><br />' + BUILTINFUNC[identifier][1]])
+            } else if (Object.keys(TYPES).indexOf(identifier) >= 0) {
+                args = [];
+                keys = Object.keys(TYPES[identifier][0])
+                values = Object.values(TYPES[identifier][0])
+                for (j=0;j< keys.length ;j++) {
+                    if (keys[j].endsWith('=')) {
+                        combiner = ' = ';
+                        keys[j] = keys[j].slice(0, -1);
+                        value = values[j]
+                    } else {
+                        combiner = ': ';
+                        value = '<span class=\'lang-typ\'>' + values[j] + '</span>'
+                    }
+                    args.push('<strong>' + keys[j] + '</strong>' + combiner + value);
+                }
+                args = args.join(', ')
+                tokens.push(['TYPE', identifier, '<span class=\'lang-typ\'>Type</span> <strong class=\'lang-typ\'>' + identifier + '</strong>(<br />&nbsp;&nbsp;' + args + '<br />)<br /><br />' + TYPES[identifier][1]])
             } else if (Object.keys(BUILTINTYPEOBJ).indexOf(identifier) >= 0) {
-                tokens.push(['BUILTINTYPEOBJ', identifier, '<span class=\'lang-typ\'>' + BUILTINTYPEOBJ[identifier] + '</span> <strong class=\'lang-bif\'>' + identifier + '</strong>'])
+                tokens.push(['BUILTINTYPEOBJ', identifier, '<span class=\'lang-typ\'>' + BUILTINTYPEOBJ[identifier] + '</span> <strong class=\'lang-bto\'>' + identifier + '</strong>'])
             } else {
                 tokens.push(['IDENTIFIER', identifier])
             }
@@ -277,6 +340,8 @@ for (i=0;i< codeblocks.length ;i++) {
             result += '<div class=\'lang lang-kwd\'>' + token[1] + '<span class=\'tooltip\'>' + token[2] +  '</span></div>';
         } else if (token[0] == 'BUILTINFUNC') {
             result += '<div class=\'lang lang-bif\'>' + token[1] + '<span class=\'tooltip\'>' + token[2] +  '</span></div>';
+        } else if (token[0] == 'TYPE') {
+            result += '<div class=\'lang lang-typ\'>' + token[1] + '<span class=\'tooltip\'>' + token[2] +  '</span></div>';
         } else if (token[0] == 'BUILTINTYPEOBJ') {
             result += '<div class=\'lang lang-bto\'>' + token[1] + '<span class=\'tooltip\'>' + token[2] +  '</span></div>';
         } else if (token[0] == 'IDENTIFIER') {
