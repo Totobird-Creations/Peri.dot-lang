@@ -12,12 +12,13 @@ for (i=0;i< elements.length ;i++) {
 
 var element = document.getElementById('nav-links');
 element.innerHTML = `<ul>
-    <li><a class="nav-link" href="https://toto-bird.github.io/Peri.dot-lang/docs">Introduction</a></li>
-    <li><a class="nav-link" href="https://toto-bird.github.io/Peri.dot-lang/docs/beginners">Beginners</a></li>
-    <li><a class="nav-link" href="https://toto-bird.github.io/Peri.dot-lang/docs/variables">Variables</a></li>
-    <li><a class="nav-link" href="https://toto-bird.github.io/Peri.dot-lang/docs/flowcontrol">Flow Control</a></li>
-    <li><a class="nav-link" href="https://toto-bird.github.io/Peri.dot-lang/docs/functions">Functions</a></li>
-    <li><a class="nav-link" href="https://toto-bird.github.io/Peri.dot-lang/docs/builtinfunctions">Built-In Functions</a></li>
-    <li><a class="nav-link" href="https://toto-bird.github.io/Peri.dot-lang/docs/includes">Includes</a></li>
-    <li><a class="nav-link" href="https://toto-bird.github.io/Peri.dot-lang/docs/types">Types</a></li>
+    <li><a class="nav-link" href="https://toto-bird.github.io/Peri.dot-lang/docs"><i class='fas fa-info'></i>Introduction</a></li>
+    <li><a class="nav-link" href="https://toto-bird.github.io/Peri.dot-lang/docs/beginners"><i class="fas fa-chalkboard-teacher"></i>Beginners</a></li>
+    <li><a class="nav-link" href="https://toto-bird.github.io/Peri.dot-lang/docs/variables"><i class='fas fa-archive'></i>Variables</a></li>
+    <li><a class="nav-link" href="https://toto-bird.github.io/Peri.dot-lang/docs/flowcontrol"><i class="fas fa-random"></i>Flow Control</a></li>
+    <li><a class="nav-link" href="https://toto-bird.github.io/Peri.dot-lang/docs/functions"><i class='fas fa-wave-square'></i>Functions</a></li>
+    <li><a class="nav-link" href="https://toto-bird.github.io/Peri.dot-lang/docs/builtinfunctions"><i class="fas fa-layer-group"></i>Built-In Functions</a></li>
+    <li><a class="nav-link" href="https://toto-bird.github.io/Peri.dot-lang/docs/includes"><i class="fas fa-dolly-flatbed"></i>Includes</a></li>
+    <li><a class="nav-link" href="https://toto-bird.github.io/Peri.dot-lang/docs/types"><i class='fas fa-cubes'></i>Types</a></li>
+    <li><a class="nav-link" href="https://toto-bird.github.io/Peri.dot-lang/docs/exceptionhandling"><i class="fas fa-bomb"></i>Exception Handling</a></li>
 </ul>`
