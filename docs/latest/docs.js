@@ -1,4 +1,4 @@
-var VERSION = '1.1.0'
+var VERSION = '1.1 (Latest)'
 
 function menuIcon(x) {
         x.classList.toggle("change");
