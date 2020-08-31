@@ -1,9 +1,9 @@
 var VERSION = '1.1 [Latest]'
 
 function menuIcon(x) {
-        x.classList.toggle("change");
-        document.getElementById("nav-links").classList.toggle("hide");
-    }
+    x.classList.toggle("change");
+    document.getElementById("nav-links").classList.toggle("hide");
+}
 
 var elements = document.getElementsByClassName('version');
 for (i=0;i< elements.length ;i++) {
