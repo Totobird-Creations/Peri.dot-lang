@@ -26,6 +26,35 @@
 
             <section class="main-section">
                 <header>Handling Exceptions</header>
+                <p><span style="padding-left: 25px;"></span>
+                    Handling exceptions can be very important, especially when there is user input. You can handle exceptions using the <code class='peridot'>handler</code> keyword.
+                </p>
+
+                <p class='block peridot'>var try = handler {
+    10 / 0 # This will raise an operation error.
+}
+
+print(try) # '<<!---->OperationException:Division by zero, 2:10>'
+
+           #  ╔═══════Title═══════╗  ╔═════Message════╗
+tuple(try) # ('Operation Exception', 'Division by zero', XX, XX)
+           #                                  Line Number╚╝  ╚╝Column Number
+
+try.name   # 'OperationException'
+try.msg    # 'Division by zero'
+try.file   # 'XXXXX.XXX'
+try.loc    # '<<!---->file>'
+try.line   # XX
+try.column # XX
+try.text   # '10 / 0'</p>
+                <br /><subheader>Ignoring Handlers</subheader>
+                <p><span style="padding-left: 25px;"></span>
+                    The <code class='peridot'>panic</code> built-in function (See <a href='https://toto-bird.github.io/Peri.dot-lang/docs/builtinfunctions'>Built-In Functions</a>) will raise a PanicException which can not be handled. These are dangerous to use with modules and other files.
+                </p>
+
+                <p class='block peridot'>var try = handler {
+    panic('This is a problem')
+}</p>
             </section>
         </main>
 

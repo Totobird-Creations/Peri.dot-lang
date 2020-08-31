@@ -48,7 +48,7 @@ assert(10 == 9, msg='Some error occured') # AssertionException: Some error occur
             <section class="main-section">
                 <header>Panicking</header>
                 <p><span style="padding-left: 25px;"></span>
-                    If something goes horribly wrong, use may want to use the <code class='peridot'>panic</code> built-in function. This function will raise a PanicException which can not be handled by handlers.
+                    If something goes horribly wrong, use may want to use the <code class='peridot'>panic</code> built-in function. This function will raise a PanicException which can not be handled by handlers. These are dangerous to use with modules and other files.
                 </p>
                 <p class='block peridot'>handler {
     panic('Some error occured')
