@@ -35,6 +35,53 @@
 
 throw(try) # Throws the given exception.</p>
             </section>
+
+            <section class="main-section">
+                <header>Assertions</header>
+                <p><span style="padding-left: 25px;"></span>
+                    The <code class='peridot'>assert</code> built-in function can be used to check if the given condition is true. If it is not, then it will throw an AssertionException. When throwing an exception, it will auto generate a message. However, you can provide your own using the msg argument.
+                </p>
+                <p class='block peridot'>assert(10 == 9) # AssertionException: 10 is not equal to 9
+assert(10 == 9, msg='Some error occured') # AssertionException: Some error occured</p>
+            </section>
+
+            <section class="main-section">
+                <header>Panicking</header>
+                <p><span style="padding-left: 25px;"></span>
+                    If something goes horribly wrong, use may want to use the <code class='peridot'>panic</code> built-in function. This function will raise a PanicException which can not be handled by handlers.
+                </p>
+                <p class='block peridot'>handler {
+    panic('Some error occured')
+} # The handler will not handle the panic and the code will crash.</p>
+            </section>
+
+            <section class="main-section">
+                <header>Printing Messages</header>
+                <p><span style="padding-left: 25px;"></span>
+                    If you need to let users know something, use the <code class='peridot'>print</code> built-in function. This function can also take a prefix and suffix.
+                </p>
+                <p class='block peridot'>print(
+    prefix='Prefix',
+    'Message',
+    suffix='Suffix\n'
+)</p>
+            </section>
+
+            <section class="main-section">
+                <header>Ranges</header>
+                <p><span style="padding-left: 25px;"></span>
+                    The <code class='peridot'>range</code> function can be used to create a list containing integers. This function is used a lot in <code class='peridot'>for</code> loops.
+                </p>
+                <p class='block peridot'>range(
+    10
+) # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+range(
+    start=10,
+    30,
+    step=2
+) # [10, 12, 14, 16, 18, 20, 22, 24, 26, 28]</p>
+            </section>
         </main>
 
         <script src='../docs/docs.js'></script>
