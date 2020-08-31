@@ -1,0 +1,136 @@
+<html>
+    <head>
+        <title>Peri.dot Language Docs</title>
+        <link href='../codeblock.css' rel='stylesheet' type='text/css'></link>
+        <link href='../docs/docs.css' rel='stylesheet' type='text/css'></link>
+        <link rel='icon' href='../favicon.png' type='image/png' ></link>
+        <style>
+            ul.deplist {
+                margin         : 0;
+            }
+
+            ul.deplist li {
+                margin         : 0;
+                margin-left    : 1em;
+            }
+
+            ul.deplist li a {
+                color          : #000000;
+                text-decoration: none;
+                font-style     : italic;
+            }
+        </style>
+    </head>
+    <body>
+
+        <nav id="navbar">
+            <div id="collapse">
+                <header><a href="https://toto-bird.github.io/Peri.dot-lang/"><img src='https://toto-bird.github.io/Peri.dot-lang/favicon.png'></img></a></header>
+            <div id="menu-icon" onclick="menuIcon(this)">
+                <div id="bar1"></div>
+                <div id="bar2"></div>
+                <div id="bar3"></div>
+            </div>
+            </div>
+            <div id="nav-links" class="hide"></div>
+        </nav>
+
+        <main id="main-doc">
+            <section id="header" class="main-section">
+                <header>Peri.dot Documentation (<span class='version'></span>)</header>
+            </section>
+
+            <section class="main-section">
+                <header>Including Other Peri.dot Files</header>
+                <p><span style="padding-left: 25px;"></span>
+                    If there is another peridot file you want to include you can use the <code class='peridot'>include</code> keyword.
+                </p>
+                <p class='block peridot'>var testmodule = include('testmodule')
+
+# The locations that the above will check in are listed in __peridot__.path.
+                </p>
+            </section>
+
+            <section class="main-section">
+                <header>Including Built-In Modules</header>
+                <p><span style="padding-left: 25px;"></span>
+                    There are a couple of built-in modules as well:
+                    <ul class='deplist'>
+                        <li>sys</li>
+                        <li>file</li>
+                        <li>datetime</li>
+                        <li>periscope</li>
+                    </ul><br />
+                </p>
+
+                <subheader>Sys</subheader>
+                <p class='block peridot'>var sys = include('sys')
+
+print(sys.args)
+# Gets the command line arguments.
+# Ex:
+#   peridot test.peri dosomething
+# Returns ['test.peri', 'dosomething'].
+
+print(sys.terminalsize())
+# Returns a tuple containing the terminal size.</p>
+
+                <subheader>File</subheader>
+                <p class='block peridot'>var file = include('file')
+
+# Modes:
+#   r   : Open file for reading
+#   rb  : Open file in binary for reading
+#   r+  : Open file for reading and writing
+#   w   : Open file for writing
+#   wb  : Open file in binary for writing
+#   w+  : Open file for writing and reading
+#   wb+ : Open file in binary for writing and reading
+#   a   : Open file for appending
+#   ab  : Open file in binary for appending
+#   a+  : Open file for appending and reading
+#   ab+ : Open file in binary for appending and reading
+
+var f = open('test.txt') # Mode defaults to r
+print(f.read())
+# Returns the contents of test.txt.
+f.close()
+
+var f = open('test.txt', mode='w')
+f.write('Hello Peri.dot!')
+# Returns the contents of test.txt.
+f.close()</p>
+
+                <subheader>Datetime</subheader>
+                <p class='block peridot'>var datetime = include('datetime')
+
+var d = datetime.now()
+print(d)
+# Gets the current time
+
+var d = datetime.datetime(
+    y=2020   # Year
+    m=8      # Month
+    d=31     # Date
+    H=11     # Hour
+    M=57     # Minute
+    S=26     # Second
+    f=192873 # Microsecond
+)
+print(d.strftime('%c'))
+# Create datetime object with custom time.
+# Then, print with strftime format '%c'</p>
+
+                <subheader>Periscope</subheader>
+                <p class='block peridot'>var periscope = include('periscope')
+
+# Periscope currently does not have documentation.</p>
+            </section>
+        </main>
+
+        <script src='../docs/docs.js'></script>
+        <script src='../colours-peri.js'></script>
+        <script src='../colours-bash.js'></script>
+        <script src="https://kit.fontawesome.com/8e3c095ab3.js" crossorigin="anonymous"></script>
+    </body>
+</html>

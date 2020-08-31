@@ -59,7 +59,9 @@ var KEYWORDS = {
     'break'   : ['Breaks out of the loop.',
                 '<span class=\'lang-kwd\'>break</span>()'],
     'handler' : ['Handles any exceptions raised from inside of the handler except for the <span class=\'lang-typ\'>PanicException</span>. Returns either an exception object or <span class=\'lang-bto\'>Null</span>.',
-                '<span class=\'lang-kwd\'>handler</span> {}']
+                '<span class=\'lang-kwd\'>handler</span> {}'],
+    'include' : ['Returns a <span class=\'lang-typ\'>namespace</span> containing the variables from the given module name',
+                '<span class=\'lang-kwd\'>include</span>(<span class=\'lang-str\'>\'sys\'</span>)']
 }
 
 var BUILTINFUNC = {
